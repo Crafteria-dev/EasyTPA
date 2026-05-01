@@ -32,7 +32,7 @@ The EasyTPA for your mc server
 
 ## 📦 Installation
 
-1. Télécharger `easytpa-1.0.0.jar` depuis les [Releases](https://github.com/ZO3N/EasyTPA/releases)
+1. Télécharger `easytpa-1.0.0.jar` depuis les [Releases](https://github.com/crafteria-dev/EasyTPA/releases)
 2. Placer le fichier dans le dossier `plugins/` de votre serveur Paper
 3. Démarrer (ou redémarrer) le serveur
 4. Modifier `plugins/EasyTPA/config.yml` et `messages.yml` selon vos besoins
@@ -176,7 +176,7 @@ tpa-received-buttons: "<green><click:run_command:/tpaccept>[Accepter]</click>"
 **Prérequis :** Java 25, Maven 3.8+
 
 ```bash
-git clone https://github.com/ZO3N/EasyTPA.git
+git clone https://github.com/crafteria-dev/EasyTPA.git
 cd EasyTPA
 mvn package
 ```
@@ -271,5 +271,5 @@ Pour toute demande commerciale, contactez **ZO3N** sur GitHub.
 
 <div align="center">
   Fait avec ❤️ par <strong>ZO3N</strong><br>
-  <a href="https://github.com/ZO3N/EasyTPA">github.com/ZO3N/EasyTPA</a>
+  <a href="https://github.com/Crafteria-dev/EasyTPA">github.com/ZO3N/EasyTPA</a>
 </div>
