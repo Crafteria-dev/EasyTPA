@@ -4,6 +4,7 @@ package fr.easytpa;
 import fr.easytpa.commands.*;
 import fr.easytpa.listeners.TeleportListener;
 import fr.easytpa.managers.*;
+import fr.easytpa.utils.UpdateChecker;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -26,7 +27,6 @@ public final class EasyTPA extends JavaPlugin {
         instance = this;
 
         saveDefaultConfig();
-        saveResource("messages.yml", false);
 
         configManager = new ConfigManager(this);
         messageManager = new MessageManager(this);
@@ -42,10 +42,12 @@ public final class EasyTPA extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new TeleportListener(this), this);
 
         getLogger().info("================================================");
-        getLogger().info("  EasyTPA v" + getDescription().getVersion() + " - by ZO3N");
+        getLogger().info("  EasyTPA v" + getPluginMeta().getVersion() + " - by ZO3N");
         getLogger().info("  https://github.com/Crafteria-dev/EasyTPA");
         getLogger().info("================================================");
         getLogger().info("EasyTPA activé !");
+
+        new UpdateChecker(this).checkAsync();
     }
 
     @Override

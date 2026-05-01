@@ -11,7 +11,11 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
+import java.util.logging.Level;
 
 public class MessageManager {
 
@@ -32,9 +36,29 @@ public class MessageManager {
         File file = new File(plugin.getDataFolder(), "messages.yml");
         if (!file.exists()) plugin.saveResource("messages.yml", false);
         messages = YamlConfiguration.loadConfiguration(file);
-        // Invalider le cache du préfixe
+        migrateMessages(file);
         cachedPrefixRaw = null;
         cachedPrefix = null;
+    }
+
+    /** Ajoute les clés manquantes depuis le messages.yml embarqué dans le JAR. */
+    private void migrateMessages(File file) {
+        try (InputStream stream = plugin.getResource("messages.yml")) {
+            if (stream == null) return;
+            YamlConfiguration defaults = YamlConfiguration.loadConfiguration(
+                    new InputStreamReader(stream, StandardCharsets.UTF_8));
+            boolean changed = false;
+            for (String key : defaults.getKeys(false)) {
+                if (!messages.contains(key)) {
+                    messages.set(key, defaults.getString(key));
+                    plugin.getLogger().info("[Messages] Nouvelle cle ajoutee : '" + key + "'");
+                    changed = true;
+                }
+            }
+            if (changed) messages.save(file);
+        } catch (Exception e) {
+            plugin.getLogger().log(Level.WARNING, "Erreur lors de la migration de messages.yml", e);
+        }
     }
 
     private Component getPrefix() {

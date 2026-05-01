@@ -3,6 +3,12 @@ package fr.easytpa.managers;
 
 import fr.easytpa.EasyTPA;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.logging.Level;
 
 public class ConfigManager {
 
@@ -17,6 +23,32 @@ public class ConfigManager {
     public void reload() {
         plugin.reloadConfig();
         this.config = plugin.getConfig();
+        if (migrateConfig()) {
+            plugin.reloadConfig();
+            this.config = plugin.getConfig();
+        }
+    }
+
+    /** Ajoute les clés manquantes depuis le config.yml embarqué. Retourne true si des clés ont été ajoutées. */
+    private boolean migrateConfig() {
+        try (InputStream stream = plugin.getResource("config.yml")) {
+            if (stream == null) return false;
+            YamlConfiguration defaults = YamlConfiguration.loadConfiguration(
+                    new InputStreamReader(stream, StandardCharsets.UTF_8));
+            boolean changed = false;
+            for (String key : defaults.getKeys(true)) {
+                if (!defaults.isConfigurationSection(key) && !config.contains(key)) {
+                    config.set(key, defaults.get(key));
+                    plugin.getLogger().info("[Config] Nouvelle cle ajoutee : '" + key + "'");
+                    changed = true;
+                }
+            }
+            if (changed) plugin.saveConfig();
+            return changed;
+        } catch (Exception e) {
+            plugin.getLogger().log(Level.WARNING, "Erreur lors de la migration de config.yml", e);
+            return false;
+        }
     }
 
     public boolean isPermissionsEnabled() {
