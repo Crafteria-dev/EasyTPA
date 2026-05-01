@@ -3,12 +3,12 @@
 [![Java](https://img.shields.io/badge/Java-25-blue.svg)](https://openjdk.org)
 [![Version](https://img.shields.io/badge/Version-1.0.0-green.svg)](https://github.com/ZO3N/EasyTPA/releases)
 
-# EasyTPA
-The EasyTPA for your mc server
-
 > 💡 **Usage Commercial :** Ce plugin est gratuit pour les particuliers.
 > Si vous êtes une entreprise ou que vous générez des revenus avec ce plugin,
 > vous **devez** me contacter pour obtenir une autorisation.
+
+# EasyTPA
+The EasyTPA for your mc server
 
 ---
 
