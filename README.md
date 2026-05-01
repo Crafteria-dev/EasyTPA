@@ -271,5 +271,5 @@ Pour toute demande commerciale, contactez **ZO3N** sur GitHub.
 
 <div align="center">
   Fait avec ❤️ par <strong>ZO3N</strong><br>
-  <a href="https://github.com/Crafteria-dev/EasyTPA">github.com/ZO3N/EasyTPA</a>
+  <a href="https://github.com/Crafteria-dev/EasyTPA">github.com/crafteria-dev/EasyTPA</a>
 </div>
