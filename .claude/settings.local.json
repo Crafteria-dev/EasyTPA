@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(java -version)",
+      "Bash(javac -version)",
+      "Bash(mvn -version)",
+      "Bash(apt-cache search *)",
+      "Read(//usr/lib/jvm/**)",
+      "Bash(mvn package *)",
+      "Bash(sudo apt-get *)",
+      "Bash(curl -s \"https://repo.papermc.io/repository/maven-public/io/papermc/paper/paper-api/maven-metadata.xml\")",
+      "Bash([ -d \"$HOME/.sdkman\" ])",
+      "Bash(/usr/lib/jvm/java-25-openjdk-amd64/bin/java -version)",
+      "Bash(JAVA_HOME=/usr/lib/jvm/java-25-openjdk-amd64 mvn package -U)",
+      "Bash(JAVA_HOME=/usr/lib/jvm/java-25-openjdk-amd64 mvn package)",
+      "Bash(JAVA_HOME=/usr/lib/jvm/java-25-openjdk-amd64 mvn package -q)",
+      "Bash(python3 -)"
+    ]
+  }
+}

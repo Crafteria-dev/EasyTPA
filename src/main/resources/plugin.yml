@@ -1,0 +1,135 @@
+name: EasyTPA
+version: '${project.version}'
+main: fr.easytpa.EasyTPA
+api-version: '26.1'
+author: ZO3N
+website: https://github.com/Crafteria-dev/EasyTPA
+description: Plugin de téléportation complet pour Paper 26.1.2
+
+commands:
+  tpa:
+    description: Envoyer une demande de téléportation à un joueur
+    usage: /tpa <joueur>
+  tpahere:
+    description: Demander à un joueur de venir à vous
+    usage: /tpahere <joueur>
+  tpaccept:
+    description: Accepter une demande de téléportation
+    usage: /tpaccept
+  tpdeny:
+    description: Refuser une demande de téléportation
+    usage: /tpdeny
+  tpcancel:
+    description: Annuler votre demande en attente
+    usage: /tpcancel
+  tptoggle:
+    description: Activer/désactiver la réception de demandes TPA
+    usage: /tptoggle
+  home:
+    description: Se téléporter à sa maison
+    usage: /home [nom]
+  sethome:
+    description: Définir sa maison
+    usage: /sethome [nom]
+  delhome:
+    description: Supprimer une maison
+    usage: /delhome [nom]
+  warp:
+    description: Se téléporter à un warp
+    usage: /warp <nom>
+  setwarp:
+    description: Créer un warp (admin)
+    usage: /setwarp <nom>
+  delwarp:
+    description: Supprimer un warp (admin)
+    usage: /delwarp <nom>
+  warps:
+    description: Lister les warps disponibles
+    usage: /warps
+  spawn:
+    description: Se téléporter au spawn
+    usage: /spawn
+  setspawn:
+    description: Définir le spawn (admin)
+    usage: /setspawn
+  back:
+    description: Retourner à sa position précédente
+    usage: /back
+  rtp:
+    description: Téléportation aléatoire dans le monde
+    usage: /rtp
+    aliases: [wild]
+  tpreload:
+    description: Recharger la configuration du plugin
+    usage: /tpreload
+
+permissions:
+  teleport.tpa:
+    description: Utiliser /tpa
+    default: true
+  teleport.tpahere:
+    description: Utiliser /tpahere
+    default: true
+  teleport.tpaccept:
+    description: Utiliser /tpaccept
+    default: true
+  teleport.tpdeny:
+    description: Utiliser /tpdeny
+    default: true
+  teleport.tpcancel:
+    description: Utiliser /tpcancel
+    default: true
+  teleport.tptoggle:
+    description: Utiliser /tptoggle
+    default: true
+  teleport.home:
+    description: Utiliser /home
+    default: true
+  teleport.home.multiple.*:
+    description: Avoir un nombre illimité de homes
+    default: op
+  teleport.sethome:
+    description: Utiliser /sethome
+    default: true
+  teleport.delhome:
+    description: Utiliser /delhome
+    default: true
+  teleport.warp:
+    description: Utiliser /warp
+    default: true
+  teleport.warps:
+    description: Utiliser /warps
+    default: true
+  teleport.spawn:
+    description: Utiliser /spawn
+    default: true
+  teleport.back:
+    description: Utiliser /back
+    default: true
+  teleport.rtp:
+    description: Utiliser /rtp
+    default: true
+  teleport.cooldown.bypass:
+    description: Ignorer le cooldown de téléportation
+    default: op
+  teleport.admin:
+    description: Toutes les permissions admin
+    default: op
+    children:
+      teleport.setwarp: true
+      teleport.delwarp: true
+      teleport.setspawn: true
+      teleport.reload: true
+      teleport.cooldown.bypass: true
+  teleport.setwarp:
+    description: Utiliser /setwarp
+    default: op
+  teleport.delwarp:
+    description: Utiliser /delwarp
+    default: op
+  teleport.setspawn:
+    description: Utiliser /setspawn
+    default: op
+  teleport.reload:
+    description: Utiliser /tpreload
+    default: op

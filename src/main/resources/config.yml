@@ -1,0 +1,43 @@
+# =============================================
+# EasyTPA - Configuration principale
+# =============================================
+
+# Système de permissions
+# false -> tous les joueurs peuvent utiliser toutes les commandes joueur librement
+# true  -> vérifie les permissions (compatible LuckPerms/tout plugin Bukkit)
+#          Les commandes admin (setwarp, delwarp, setspawn, tpreload) nécessitent
+#          toujours teleport.admin ou le statut OP, quelle que soit cette valeur.
+permissions: false
+
+# Délai avant téléportation (en secondes). 0 pour désactiver.
+# Le joueur ne doit pas bouger pendant ce délai, sinon la téléportation est annulée.
+teleport-delay: 3
+
+# Durée (en secondes) avant expiration d'une demande TPA
+tpa-timeout: 60
+
+# Si true, /back peut ramener au lieu de mort du joueur
+back-on-death: true
+
+# Nombre maximum de homes par joueur
+# Si permissions: true, peut être augmenté via teleport.home.multiple.<nombre>
+max-homes: 1
+
+# Nombre maximum de warps par joueur
+max-warps: 5
+
+# Rayon maximum (en blocs) pour la téléportation aléatoire /rtp
+rtp-radius: 5000
+
+# Rayon minimum (en blocs) pour /rtp (évite le spawn)
+rtp-min-radius: 100
+
+# Nombre maximum de tentatives pour trouver une position sûre pour /rtp
+rtp-max-attempts: 20
+
+# Cooldown global entre deux téléportations (en secondes). 0 pour désactiver.
+# Contourne : permission teleport.cooldown.bypass
+teleport-cooldown: 30
+
+# Préfixe des messages en jeu (format MiniMessage)
+messages-prefix: "<dark_gray>[<aqua>EasyTPA<dark_gray>]<reset> "

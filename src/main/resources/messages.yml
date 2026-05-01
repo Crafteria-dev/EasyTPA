@@ -1,0 +1,95 @@
+# =============================================
+# EasyTPA - Messages personnalisables
+# Format: MiniMessage (https://docs.advntr.dev/minimessage)
+# Placeholders : utiliser <nom> (et non {nom})
+#   <player>  - nom d'un joueur
+#   <home>    - nom d'un home
+#   <warp>    - nom d'un warp
+#   <delay>   - délai en secondes
+#   <max>     - maximum autorisé
+#   <usage>   - usage de la commande
+#   <homes>   - liste des homes
+#   <warps>   - liste des warps
+# =============================================
+
+# Erreurs générales
+no-permission: "<red>Vous n'avez pas la permission d'utiliser cette commande."
+invalid-name: "<red>Le nom ne doit contenir que des lettres, chiffres, <gold>-</gold> ou <gold>_</gold> (max 32 caractères)."
+player-only: "<red>Cette commande ne peut être utilisée que par un joueur."
+player-not-found: "<red>Le joueur <gold><player></gold> est introuvable ou hors ligne."
+invalid-usage: "<red>Usage incorrect. Tapez <gold><usage></gold>."
+
+# Téléportation générale
+teleport-success: "<green>Téléportation effectuée."
+teleport-cancelled-moved: "<red>Téléportation annulée car vous avez bougé."
+teleport-pending: "<yellow>Téléportation dans <gold><delay></gold> seconde(s)... Ne bougez pas !"
+teleport-cooldown: "<red>Vous devez attendre encore <gold><remaining></gold> seconde(s) avant de vous téléporter."
+
+# TPA
+tpa-sent: "<green>Demande de téléportation envoyée à <gold><player></gold>."
+tpa-received: "<gold><player></gold> <yellow>souhaite se téléporter à vous."
+tpa-received-buttons: "<yellow>[ <green><click:run_command:/tpaccept><hover:show_text:'<green>Accepter'><bold>✔ Accepter</bold></hover></click> <yellow>] [ <red><click:run_command:/tpdeny><hover:show_text:'<red>Refuser'><bold>✘ Refuser</bold></hover></click> <yellow>]"
+tpa-already-pending: "<red>Vous avez déjà une demande en attente. Utilisez <gold>/tpcancel</gold> pour l'annuler."
+tpa-self: "<red>Vous ne pouvez pas vous envoyer une demande à vous-même."
+tpa-disabled: "<red><gold><player></gold> n'accepte pas les demandes de téléportation."
+tpa-timeout: "<red>La demande de téléportation vers <gold><player></gold> a expiré."
+tpa-timeout-notify: "<red>La demande de <gold><player></gold> a expiré."
+
+# TPA Here
+tpahere-sent: "<green>Demande envoyée à <gold><player></gold> pour qu'il vous rejoigne."
+tpahere-received: "<gold><player></gold> <yellow>souhaite que vous vous téléportiez à lui."
+tpahere-received-buttons: "<yellow>[ <green><click:run_command:/tpaccept><hover:show_text:'<green>Accepter'><bold>✔ Accepter</bold></hover></click> <yellow>] [ <red><click:run_command:/tpdeny><hover:show_text:'<red>Refuser'><bold>✘ Refuser</bold></hover></click> <yellow>]"
+
+# Accept / Deny / Cancel
+tpaccept-no-request: "<red>Vous n'avez aucune demande de téléportation en attente."
+tpaccept-partner-cooldown: "<gold><player></gold> <red>est en cooldown, réessayez dans <gold><remaining></gold> seconde(s)."
+tpaccept-initiator-gone: "<red>Le joueur qui vous avait envoyé une demande n'est plus connecté."
+tpaccept-success-target: "<green>Demande acceptée."
+tpaccept-success-initiator: "<green><gold><player></gold> a accepté votre demande."
+tpdeny-no-request: "<red>Vous n'avez aucune demande de téléportation en attente."
+tpdeny-success-target: "<green>Demande refusée."
+tpdeny-success-initiator: "<red><gold><player></gold> a refusé votre demande."
+tpcancel-no-request: "<red>Vous n'avez aucune demande en attente à annuler."
+tpcancel-success: "<green>Votre demande envers <gold><player></gold> a été annulée."
+tpcancel-notify: "<yellow><gold><player></gold> a annulé sa demande de téléportation."
+
+# Toggle
+tptoggle-disabled: "<yellow>Vous n'accepterez plus les demandes de téléportation."
+tptoggle-enabled: "<green>Vous acceptez à nouveau les demandes de téléportation."
+
+# Home
+home-not-found: "<red>Le home <gold><home></gold> est introuvable."
+home-success: "<green>Téléporté à votre home <gold><home></gold>."
+home-set: "<green>Home <gold><home></gold> défini à votre position actuelle."
+home-deleted: "<green>Home <gold><home></gold> supprimé."
+home-list: "<yellow>Vos homes : <gold><homes></gold>"
+home-list-empty: "<yellow>Vous n'avez aucun home. Utilisez <gold>/sethome</gold>."
+home-limit-reached: "<red>Vous avez atteint la limite de <gold><max></gold> home(s). Supprimez-en un d'abord."
+warp-limit-reached: "<red>Vous avez atteint votre limite de <gold><max></gold> warp(s). Supprimez-en un avec <gold>/delwarp</gold>."
+home-no-spawn: "<red>Aucun home trouvé. Utilisez <gold>/sethome</gold>."
+
+# Warp
+warp-not-found: "<red>Le warp <gold><warp></gold> est introuvable."
+warp-not-yours: "<red>Vous ne pouvez pas supprimer le warp <gold><warp></gold> car vous n'en êtes pas le créateur."
+warp-success: "<green>Téléporté au warp <gold><warp></gold>."
+warp-set: "<green>Warp <gold><warp></gold> créé à votre position."
+warp-deleted: "<green>Warp <gold><warp></gold> supprimé."
+warp-list: "<yellow>Warps disponibles :"
+warp-list-empty: "<yellow>Aucun warp n'est disponible."
+
+# Spawn
+spawn-not-set: "<red>Aucun spawn n'est défini. Un admin doit utiliser /setspawn."
+spawn-success: "<green>Téléporté au spawn."
+spawn-set: "<green>Spawn défini à votre position actuelle."
+
+# Back
+back-no-location: "<red>Aucune position précédente disponible."
+back-success: "<green>Retour à votre position précédente."
+
+# RTP
+rtp-searching: "<yellow>Recherche d'une position aléatoire sûre..."
+rtp-success: "<green>Téléporté aléatoirement !"
+rtp-failed: "<red>Impossible de trouver une position sûre. Réessayez."
+
+# Reload
+reload-success: "<green>Configuration rechargée avec succès."
