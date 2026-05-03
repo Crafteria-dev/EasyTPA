@@ -1,7 +1,7 @@
 [![License: FCL](https://img.shields.io/badge/License-Fair_Core-blue.svg)](LICENSE)
 [![Paper](https://img.shields.io/badge/Paper-26.1.2-orange.svg)](https://papermc.io)
 [![Java](https://img.shields.io/badge/Java-25-blue.svg)](https://openjdk.org)
-[![Version](https://img.shields.io/badge/Version-1.0.0-green.svg)](https://github.com/ZO3N/EasyTPA/releases)
+[![Version](https://img.shields.io/badge/Version-1.0.2-green.svg)](https://github.com/ZO3N/EasyTPA/releases)
 
 > 💡 **Usage Commercial :** Ce plugin est gratuit pour les particuliers.
 > Si vous êtes une entreprise ou que vous générez des revenus avec ce plugin,
